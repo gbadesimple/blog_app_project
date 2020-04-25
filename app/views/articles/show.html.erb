@@ -7,6 +7,8 @@
   <% end %>
 </p> <br />
 
+<p> <%= image_tag @article.image.url %> </p>
+
 <p><%= @article.body %></p>
 
 <h3> comments (<%= @article.comments.size %>) </h3>
