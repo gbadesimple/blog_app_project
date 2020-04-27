@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :require_login, except: [ :create ]
+
   include CommentsHelper
 
   def create
@@ -8,6 +10,10 @@ class CommentsController < ApplicationController
     @comment.save
 
     redirect_to article_path(@comment.article)
+  end
+
+  def index
+    @comments = Comment.all    
   end
 
 end
