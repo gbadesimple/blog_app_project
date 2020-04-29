@@ -15,8 +15,9 @@
 <%= render partial: 'articles/comment', collection: @article.comments %>
 <%= render partial: 'comments/form' %>
 
-<% if logged_in? %>
 <%= link_to "<< Back to Articles List", articles_path %> &nbsp;
+<% if logged_in? %>
+<%= link_to 'Create new account', new_author_path %>
 <%= link_to "Delete", article_path(@article), method: :delete %> &nbsp;
 <%= link_to "edit", edit_article_path(@article) %>
 <% end %>
